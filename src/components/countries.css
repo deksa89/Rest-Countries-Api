@@ -1,7 +1,7 @@
 .countries-list__list {
     display: grid;
     grid-template-columns: auto auto auto auto;
-    padding: 100px;
+    padding: 40px 100px 100px 100px;
     gap: 10px;
     grid-auto-rows: minmax(100px, auto);
 }
@@ -9,8 +9,8 @@
 .countries-list__country {
     margin: 10px;
     width: 300px;
-    background-color: rgb(59, 65, 63);
-    border: 1px solid rgba(0, 0, 0, 0.8);
+    background-color: rgb(124, 124, 124);
+    border: none;
     border-radius: 8px;
     font-size: 30px;
     text-align: center;
@@ -47,4 +47,45 @@ ul {
 
 .countries-list__data:last-child {
     margin-bottom: 30px;
+}
+
+.countries-list__form {
+    display: flex;
+    width: 33rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+    margin-left: 110px;
+    padding-top: 5rem;
+}
+
+.countries-list__input {
+    width: 25rem;
+    height: 3rem;
+    border-radius: 0 8px 8px 0;
+    flex: 1;
+    padding: 0.5rem;
+    border: none;
+    outline: none;   
+    font-size: 18px;
+    padding-left: 30px;
+    background-color: rgb(124, 124, 124);
+}
+
+
+input::placeholder {
+    font-size: 18px;
+    padding-left: 5rem;
+}
+
+.countries-list__submit-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background-color: rgb(124, 124, 124);
+    border-radius: 8px 0 0 8px;
+    cursor: pointer;
+    height: 4rem;
+    border: none;
 }
