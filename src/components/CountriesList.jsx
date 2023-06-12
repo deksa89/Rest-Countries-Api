@@ -18,7 +18,7 @@ const generateRandomId = () => {
     return randomId;
   }
 
-const CountriesList = () => {
+const CountriesList = ({theme}) => {
     const [searchTerm, setSearchTerm] = useState("")
     const [filteredCountries, setFilteredCountries] = useState(data)
 
@@ -34,20 +34,19 @@ const CountriesList = () => {
         setFilteredCountries(filtered);
     }
 
-
   return (
     <div className='countries-list'>
         <div>
             <form className='countries-list__form' onSubmit={handleSearchSubmit}>
-                <input className='countries-list__input' type='text' placeholder='Search for a country...' value={searchTerm} onChange={handleSearchChange} />
-                <button type="submit" className="countries-list__submit-button">
+                <input className={`countries-list__input-${theme === 'dark' ? 'dark' : 'light'}`} type='text' placeholder='Search for a country...' value={searchTerm} onChange={handleSearchChange} />
+                <button type="submit" className={`countries-list__submit-button-${theme === 'dark' ? 'dark' : 'light'}`}>
                     <FontAwesomeIcon icon={faSearch} size='2x' />
                 </button>
             </form>
         </div>
       <ul className='countries-list__list'>
         {filteredCountries.map((country) => (
-            <div key={generateRandomId()} className='countries-list__country'>
+            <div key={generateRandomId()} className={`countries-list__country-${theme === 'dark' ? 'dark' : 'light'}`}>
                 <img className='countries-list__img' src={country.flag} alt={country.name} />
                 <div className='countries-list_country-info'>
                     <li className='countries-list__name'>{country.name}</li>

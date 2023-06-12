@@ -4,12 +4,60 @@
   scroll-behavior: smooth;
 }
 
-body {
+.app-dark {
   background-color: rgb(15, 15, 15);
 }
 
-.app__title {
+.app-light {
+  background-color: rgb(228, 228, 228);
+}
+
+.app__header-dark {
   background-color: rgb(124, 124, 124);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 30px 110px;
+}
+
+.app__header-light {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 30px 110px;
+}
+
+.app__title-dark {
   color: white;
-  padding: 30px 30px 30px 110px;
+}
+
+.app__title-light {
+  color: black;
+}
+
+.app__theme-toggle-dark {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(124, 124, 124);
+  border: none;
+  cursor: pointer;
+}
+
+.app__theme-toggle-light {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  cursor: pointer;
+}
+
+.app__theme-toggle-mode {
+  font-size: 16px;
+  font-weight: 600;
+  padding-left: 11px;
 }
