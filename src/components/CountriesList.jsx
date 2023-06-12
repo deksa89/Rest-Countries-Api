@@ -21,6 +21,7 @@ const generateRandomId = () => {
 const CountriesList = ({theme}) => {
     const [searchTerm, setSearchTerm] = useState("")
     const [filteredCountries, setFilteredCountries] = useState(data)
+    const [filteredRegion, setFilteredRegion] = useState('Filter by region')
 
     const handleSearchChange = (e) => {
         setSearchTerm(e.target.value)
@@ -34,16 +35,45 @@ const CountriesList = ({theme}) => {
         setFilteredCountries(filtered);
     }
 
+    const handleFilterChange = (e) => {
+        const selectedRegion = e.target.value;
+        setFilteredRegion(selectedRegion);
+
+        if (selectedRegion === 'filter-by-region') {
+            setFilteredCountries(data)
+        } else {
+            const filteredCountries = data.filter((country) => country.region === selectedRegion);
+            setFilteredCountries(filteredCountries)
+        }
+    }
+
+
+
   return (
     <div className='countries-list'>
-        <div>
+        <div className='countries-list__search-filter'>
             <form className='countries-list__form' onSubmit={handleSearchSubmit}>
                 <input className={`countries-list__input-${theme === 'dark' ? 'dark' : 'light'}`} type='text' placeholder='Search for a country...' value={searchTerm} onChange={handleSearchChange} />
                 <button type="submit" className={`countries-list__submit-button-${theme === 'dark' ? 'dark' : 'light'}`}>
                     <FontAwesomeIcon icon={faSearch} size='2x' />
                 </button>
             </form>
+            <select 
+                name="regions" 
+                id="regions"
+                onChange={handleFilterChange}
+                value={filteredRegion}
+                className={`countries-list__select-${theme === 'dark' ? 'dark' : 'light'}`}
+                >
+                    <option value='filter-by-region'>Filter by region</option>
+                    <option value='Africa'>Africa</option>
+                    <option value='Americas'>Americas</option>
+                    <option value='Asia'>Asia</option>
+                    <option value='Europe'>Europe</option>
+                    <option value='Oceania'>Oceania</option>
+            </select>
         </div>
+
       <ul className='countries-list__list'>
         {filteredCountries.map((country) => (
             <div key={generateRandomId()} className={`countries-list__country-${theme === 'dark' ? 'dark' : 'light'}`}>

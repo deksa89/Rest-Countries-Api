@@ -7,6 +7,15 @@
     align-content: center;
 }
 
+.countries-list__search-filter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px 110px;
+
+}
+
 .countries-list__country-light {
     margin: 10px;
     max-width: 300px;
@@ -69,8 +78,6 @@ ul {
     justify-content: center;
     align-items: center;
     flex-direction: row-reverse;
-    margin-left: 110px;
-    padding-top: 5rem;
 }
 
 .countries-list__input-light {
@@ -127,4 +134,28 @@ input::placeholder {
     cursor: pointer;
     height: 4rem;
     border: none;
+}
+
+.countries-list__select-dark {
+    width: 18rem;
+    height: 4rem;
+    border-radius: 8px;
+    padding: 0.5rem;
+    border: none;
+    outline: none;   
+    font-size: 18px;
+    background-color: rgb(124, 124, 124);
+    color: rgb(189, 195, 201);
+}
+
+.countries-list__select-light {
+    width: 18rem;
+    height: 4rem;
+    border-radius: 8px;
+    padding: 0.5rem;
+    border: none;
+    outline: none;   
+    font-size: 18px;
+    background-color: white;
+    color: black;
 }
