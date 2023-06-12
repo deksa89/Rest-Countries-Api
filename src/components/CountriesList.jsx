@@ -80,9 +80,9 @@ const CountriesList = ({theme}) => {
                 <img className='countries-list__img' src={country.flag} alt={country.name} />
                 <div className='countries-list_country-info'>
                     <li className='countries-list__name'>{country.name}</li>
-                    <li className='countries-list__data'>Population: {country.population}</li>
-                    <li className='countries-list__data'>Region: {country.region}</li>
-                    <li className='countries-list__data'>Capital: {country.capital}</li>
+                    <li className='countries-list__data'>Population: <p className={`countries-list__data-results-${theme === 'dark' ? 'dark' : 'light'}`}>{country.population.toLocaleString()}</p></li>
+                    <li className='countries-list__data'>Region: <p className={`countries-list__data-results-${theme === 'dark' ? 'dark' : 'light'}`}>{country.region}</p></li>
+                    <li className='countries-list__data'>Capital: <p className={`countries-list__data-results-${theme === 'dark' ? 'dark' : 'light'}`}>{country.capital}</p></li>
                 </div>
             </div>
         ))}
