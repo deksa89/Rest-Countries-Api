@@ -1,9 +1,16 @@
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 import data from '../data/data.json';
 import { BiArrowBack } from "react-icons/bi";
 
 import './country.css'
+
+
+const getRealName = (borderCode) => {
+  const country = data.find((c) => c.alpha3Code === borderCode);
+  return country.name;
+};
 
 const CountryDetails = ({theme}) => {
   const { name } = useParams();
@@ -22,19 +29,19 @@ const CountryDetails = ({theme}) => {
 
 
         <div className='country-detail__only-data'>
-          <h1 className='country-detail__title'>{country.name}</h1>
+          <h1 className={`country-detail__title-${theme === 'dark' ? 'dark' : 'light'}`}>{country.name}</h1>
 
           <div className='country-detail__no-title'>
             <div className='country-detail__left-info'>
-              <p className={`country-detail__details-${theme === 'dark' ? 'dark' : 'light'}`}><p className='country-detail__details-title'>Native Name: </p>{country.nativeName}</p>
-              <p className={`country-detail__details-${theme === 'dark' ? 'dark' : 'light'}`}><p className='country-detail__details-title'>Population: </p>{country.population.toLocaleString()}</p>
-              <p className={`country-detail__details-${theme === 'dark' ? 'dark' : 'light'}`}><p className='country-detail__details-title'>Region: </p>{country.region}</p>
-              <p className={`country-detail__details-${theme === 'dark' ? 'dark' : 'light'}`}><p className='country-detail__details-title'>Sub Region: </p>{country.subregion}</p>
-              <p className={`country-detail__details-${theme === 'dark' ? 'dark' : 'light'}`}><p className='country-detail__details-title'>Capital: </p>{country.capital}</p>
+              <div className={`country-detail__details-${theme === 'dark' ? 'dark' : 'light'}`}><p className='country-detail__details-title'>Native Name: </p>{country.nativeName}</div>
+              <div className={`country-detail__details-${theme === 'dark' ? 'dark' : 'light'}`}><p className='country-detail__details-title'>Population: </p>{country.population.toLocaleString()}</div>
+              <div className={`country-detail__details-${theme === 'dark' ? 'dark' : 'light'}`}><p className='country-detail__details-title'>Region: </p>{country.region}</div>
+              <div className={`country-detail__details-${theme === 'dark' ? 'dark' : 'light'}`}><p className='country-detail__details-title'>Sub Region: </p>{country.subregion}</div>
+              <div className={`country-detail__details-${theme === 'dark' ? 'dark' : 'light'}`}><p className='country-detail__details-title'>Capital: </p>{country.capital}</div>
             </div>
             <div className='country-detail__right-info'>
-              <p className={`country-detail__details-${theme === 'dark' ? 'dark' : 'light'}`}><p className='country-detail__details-title'>Top Level Domain: </p>{country.topLevelDomain}</p>
-              <p className={`country-detail__details-${theme === 'dark' ? 'dark' : 'light'}`}><p className='country-detail__details-title'>Currencies: </p>{country.currencies[0].name}</p>
+              <div className={`country-detail__details-${theme === 'dark' ? 'dark' : 'light'}`}><p className='country-detail__details-title'>Top Level Domain: </p>{country.topLevelDomain}</div>
+              <div className={`country-detail__details-${theme === 'dark' ? 'dark' : 'light'}`}><p className='country-detail__details-title'>Currencies: </p>{country.currencies[0].name}</div>
               <div className={`country-detail__details-${theme === 'dark' ? 'dark' : 'light'}`}>
                 <p className='country-detail__details-title'>Languages:</p>
                 {country.languages.map((language, index) => (
@@ -43,17 +50,20 @@ const CountryDetails = ({theme}) => {
               </div>
             </div>
           </div>
-
-            <div className={`country-detail__details-${theme === 'dark' ? 'dark' : 'light'}`}>
-                <p className='country-detail__details-title'>Border countries:</p>
-                {country.borders.map((borderCountry, index) => (
-                  <p key={index}>{borderCountry.name + ", "}</p>
-                ))}
-            </div>
-            
+          <div className={`country-detail__details-${theme === 'dark' ? 'dark' : 'light'}`}>
+            <p className='country-detail__details-title'>Border countries:</p>
+            {country.borders !== undefined ? (
+              country.borders.map((borderCountry, index) => (
+                <Link key={index} to={`/country/${getRealName(borderCountry)}`}>
+                  <li className='country-detail__neighbors'>{getRealName(borderCountry)}</li>
+                </Link>
+              ))
+            ) : (
+              <p>No neighboring countries</p>
+            )}
+          </div>            
         </div>
       </div>
-
     </div>
   );
 };

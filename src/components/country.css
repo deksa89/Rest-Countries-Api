@@ -70,7 +70,12 @@
     flex-direction: row;
 }
 
-.country-detail__title {
+.country-detail__title-light {
+    padding-bottom: 50px;
+    color: black;
+}
+
+.country-detail__title-dark {
     padding-bottom: 50px;
     color: white;
 }
@@ -98,4 +103,9 @@
 
 .country-detail__right-info {
     padding-left: 100px;
+}
+
+.country-detail__neighbors {
+    list-style-type: none;
+    padding: 10px 5px;
 }
