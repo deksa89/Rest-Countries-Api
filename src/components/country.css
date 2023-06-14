@@ -106,6 +106,30 @@
 }
 
 .country-detail__neighbors {
-    list-style-type: none;
+   
     padding: 10px 5px;
+}
+
+.country-detail__link {
+    text-decoration: none;
+}
+
+.country-detail__neighbors-dark {
+    background-color: rgb(31 31 31);
+    color: white;
+    margin: 0 10px;
+    padding: 12px;
+    border-radius: 5px;
+    list-style-type: none;
+    box-shadow: 0px 1px 7px 7px rgb(2 2 2);
+}
+
+.country-detail__neighbors-dark-light {
+    background-color: rgb(31 31 31);
+    color: white;
+    margin: 0 10px;
+    padding: 12px;
+    border-radius: 5px;
+    list-style-type: none;
+    box-shadow: 0px 1px 7px 7px rgb(2 2 2);
 }

@@ -54,8 +54,8 @@ const CountryDetails = ({theme}) => {
             <p className='country-detail__details-title'>Border countries:</p>
             {country.borders !== undefined ? (
               country.borders.map((borderCountry, index) => (
-                <Link key={index} to={`/country/${getRealName(borderCountry)}`}>
-                  <li className='country-detail__neighbors'>{getRealName(borderCountry)}</li>
+                <Link className='country-detail__link' key={index} to={`/country/${getRealName(borderCountry)}`}>
+                  <li className={`country-detail__neighbors-${theme === 'dark' ? 'dark' : 'light'}`}>{getRealName(borderCountry)}</li>
                 </Link>
               ))
             ) : (
