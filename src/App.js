@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import CountriesList from "./components/CountriesList";
+import CountryDetails from "./components/CountryDetails";
 import { FaMoon } from "react-icons/fa";
 
 import "./App.css";
@@ -11,8 +13,6 @@ const App = () => {
     setTheme(theme === "light" ? "dark" : "light");
   };
 
-  // console.log("theme: ", theme)
-
   return (
     <div className={`app-${theme === 'dark' ? 'dark' : 'light'}`}>
       <div className={`app__header-${theme === 'dark' ? 'dark' : 'light'}`}>
@@ -21,7 +21,12 @@ const App = () => {
           <FaMoon style={{fontSize: '20px'}} /><p className="app__theme-toggle-mode">Dark Mode</p>
         </button>
       </div>
-      <CountriesList theme={theme} />
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<CountriesList theme={theme} />} />
+          <Route path='/country/:name' element={<CountryDetails theme={theme} />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 };

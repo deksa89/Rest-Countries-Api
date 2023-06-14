@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import data from '../data/data.json'
+import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
@@ -48,7 +49,6 @@ const CountriesList = ({theme}) => {
     }
 
 
-
   return (
     <div className='countries-list'>
         <div className='countries-list__search-filter'>
@@ -76,7 +76,7 @@ const CountriesList = ({theme}) => {
 
       <ul className='countries-list__list'>
         {filteredCountries.map((country) => (
-            <div key={generateRandomId()} className={`countries-list__country-${theme === 'dark' ? 'dark' : 'light'}`}>
+            <Link to={`/country/${country.name}`} key={generateRandomId()} className={`countries-list__country-${theme === 'dark' ? 'dark' : 'light'}`}>
                 <img className='countries-list__img' src={country.flag} alt={country.name} />
                 <div className='countries-list_country-info'>
                     <li className='countries-list__name'>{country.name}</li>
@@ -84,7 +84,7 @@ const CountriesList = ({theme}) => {
                     <li className='countries-list__data'>Region: <p className={`countries-list__data-results-${theme === 'dark' ? 'dark' : 'light'}`}>{country.region}</p></li>
                     <li className='countries-list__data'>Capital: <p className={`countries-list__data-results-${theme === 'dark' ? 'dark' : 'light'}`}>{country.capital}</p></li>
                 </div>
-            </div>
+            </Link>
         ))}
       </ul>
     </div>
