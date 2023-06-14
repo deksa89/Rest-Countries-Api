@@ -20,7 +20,7 @@ const CountryDetails = ({theme}) => {
 
   return (
     <div className={`country-detail-${theme === 'dark' ? 'dark' : 'light'}`}>
-      <button className={`country-detail__back-button-${theme === 'dark' ? 'dark' : 'light'}`} onClick={() => navigate('/')}><BiArrowBack style={{fontSize: '20px', paddingRight: '10px'}} /> Back</button>
+      <button className={`country-detail__back-button-${theme === 'dark' ? 'dark' : 'light'}`} onClick={() => navigate('/')}><BiArrowBack style={{fontSize: '20px', padding: '10px'}} /> Back</button>
 
       <div className='country-detail__info'>
         <div className='country-detail__image'>
@@ -41,7 +41,7 @@ const CountryDetails = ({theme}) => {
             </div>
             <div className='country-detail__right-info'>
               <div className={`country-detail__details-${theme === 'dark' ? 'dark' : 'light'}`}><p className='country-detail__details-title'>Top Level Domain: </p>{country.topLevelDomain}</div>
-              <div className={`country-detail__details-${theme === 'dark' ? 'dark' : 'light'}`}><p className='country-detail__details-title'>Currencies: </p>{country.currencies[0].name}</div>
+              <div className={`country-detail__details-${theme === 'dark' ? 'dark' : 'light'}`}><p className='country-detail__details-title'>Currency: </p>{country.currencies[0].name}</div>
               <div className={`country-detail__details-${theme === 'dark' ? 'dark' : 'light'}`}>
                 <p className='country-detail__details-title'>Languages:</p>
                 {country.languages.map((language, index) => (

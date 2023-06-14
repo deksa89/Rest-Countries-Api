@@ -86,6 +86,7 @@
     align-items: center;
     padding: 10px 0;
     color: black;
+    flex-wrap: wrap
 }
 
 .country-detail__details-dark {
@@ -94,6 +95,7 @@
     align-items: center;
     padding: 10px 0;
     color: white;
+    flex-wrap: wrap
 }
 
 .country-detail__details-title {
@@ -112,24 +114,25 @@
 
 .country-detail__link {
     text-decoration: none;
+    padding: 2px 10px;
 }
 
 .country-detail__neighbors-dark {
     background-color: rgb(31 31 31);
     color: white;
-    margin: 0 10px;
+    margin: 8px 10px;
     padding: 12px;
     border-radius: 5px;
     list-style-type: none;
     box-shadow: 0px 1px 7px 7px rgb(2 2 2);
 }
 
-.country-detail__neighbors-dark-light {
-    background-color: rgb(31 31 31);
-    color: white;
-    margin: 0 10px;
+.country-detail__neighbors-light {
+    background-color: rgb(243, 243, 243);
+    color: rgb(0, 0, 0);
+    margin: 8px 10px;
     padding: 12px;
     border-radius: 5px;
     list-style-type: none;
-    box-shadow: 0px 1px 7px 7px rgb(2 2 2);
+    box-shadow: 0px 1px 7px 7px rgb(228, 228, 228);
 }
