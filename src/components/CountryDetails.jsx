@@ -20,7 +20,7 @@ const CountryDetails = ({theme}) => {
 
   return (
     <div className={`country-detail-${theme === 'dark' ? 'dark' : 'light'}`}>
-      <button className={`country-detail__back-button-${theme === 'dark' ? 'dark' : 'light'}`} onClick={() => navigate('/')}><BiArrowBack style={{fontSize: '20px', padding: '10px'}} /> Back</button>
+      <button className={`country-detail__back-button-${theme === 'dark' ? 'dark' : 'light'}`} onClick={() => navigate('/Rest-Countries-Api')}><BiArrowBack style={{fontSize: '20px', padding: '10px'}} /> Back</button>
 
       <div className='country-detail__info'>
         <div className='country-detail__image'>
