@@ -45,7 +45,10 @@ const CountryDetails = ({theme}) => {
               <div className={`country-detail__details-${theme === 'dark' ? 'dark' : 'light'}`}>
                 <p className='country-detail__details-title'>Languages:</p>
                 {country.languages.map((language, index) => (
-                  <p key={index}>{language.name + ", "}</p>
+                  <p className='country-detail__details-languages' key={index}>
+                    {language.name}
+                    {index !== country.languages.length - 1 && ", "}
+                  </p>
                 ))}
               </div>
             </div>
