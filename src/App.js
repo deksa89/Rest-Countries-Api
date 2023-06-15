@@ -23,7 +23,7 @@ const App = () => {
       </div>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<CountriesList theme={theme} />} />
+          <Route path='/Rest-Countries-Api' element={<CountriesList theme={theme} />} />
           <Route path='/country/:name' element={<CountryDetails theme={theme} />} />
         </Routes>
       </BrowserRouter>
