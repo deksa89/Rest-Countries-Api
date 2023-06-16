@@ -23,7 +23,7 @@ npm install
 4. Start the application:
 npm start
 
-5. Open your browser and visit http://localhost:3000 to access the Country Explorer application.
+5. Open your browser and visit http://localhost:3000 to access the Rest country application.
 
 ## Technologies Used
 React: JavaScript library for building user interfaces
